@@ -1,0 +1,97 @@
+//@import _responsive.
+
+
+@font-face {
+  font-family: Raleway;
+  src: url('../fonts/Raleway-Bold.eot');
+  src: local('☺'), url('../fonts/Raleway-Bold.woff') format('woff'), url('../fonts/Raleway-Bold.ttf') format('truetype'), url('../fonts/Raleway-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url('../fonts/Raleway-Light.eot');
+  src: local('☺'), url('../fonts/Raleway-Light.woff') format('woff'), url('../fonts/Raleway-Light.ttf') format('truetype'), url('../fonts/Raleway-Light.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+/*---------------VARIABLES---------------*/
+$main_color_light:rgb(122, 122, 122);
+$main_color_dark:rgb(96, 96, 96);
+$main_color_active:rgb(26, 187, 156);
+
+
+/*---------------VARIABLES END---------------*/
+
+
+/*---------------HEADER---------------*/
+.header-top{
+  height: 3px;
+  background-color: rgb(65, 65, 65);
+}
+.header{
+  height:109px;/*add-padding-bottom*/
+  background-color: whitesmoke;
+}
+.header-base-logo{
+  margin-top: 30px;
+}
+.header-nav{
+  line-height:109px;
+}
+.header-nav-link{
+  color:$main_color_light;
+  margin-right: 50px;
+  height: 11px;
+  font-family: Raleway,sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+    &:hover{
+      color:$main_color_active;
+      text-decoration: none;
+    }
+}
+.header-nav_active{
+  color: $main_color_active;
+    &:hover{
+      color:$main_color_light;
+      text-decoration: none;
+    }
+}
+/*---------------HEADER END---------------*/
+
+
+/*---------------MAIN----------------------------*/
+
+
+/*---------------SECOND-BLOCK---------------*/
+.second-block-wrapper{
+  margin:70px 0;
+}
+.second-block-text-header{
+  margin-bottom:25px;
+}
+.second-block-text-header{
+  height: 27px;
+  color: $main_color_dark;
+  font-family: Raleway,sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.second-block-text{
+  @extend .second-block-text-header;
+  font-size: 25px;
+  font-weight: 300;
+}
+/*---------------SECOND-BLOCK END---------------*/
+
+/*---------------THIRD-BLOCK-SLIDER---------------*/
+.third-block{
+  height:550px; /*add-padding-bottom*/
+}
+
+
+/*---------------THIRD-BLOCK-SLIDER END-------------*/

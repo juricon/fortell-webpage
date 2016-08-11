@@ -1,3 +1,4 @@
-/**
- * Created by Наташа on 05.08.2016.
- */
+
+$(document).ready(function(){
+    $('.third-block-bxslider').bxSlider();
+});

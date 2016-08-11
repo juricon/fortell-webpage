@@ -29,7 +29,7 @@ ul.bxslider {
 /** THEME
 ===================================*/
 
-.bx-wrapper .bx-pager,
+/*.bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
   position: absolute;
   bottom: -30px;
@@ -43,11 +43,11 @@ ul.bxslider {
   font-weight: bold;
   color: #666;
   padding-top: 20px;
-}
+}*/
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #666;
   text-indent: -9999px;
-  display: block;
+  display: none;
   width: 10px;
   height: 10px;
   margin: 0 5px;
@@ -63,7 +63,7 @@ ul.bxslider {
 }
 .bx-wrapper .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-  display: none;
+  display: block;
   *zoom: 1;
   *display: inline;
 }
@@ -73,27 +73,58 @@ ul.bxslider {
 }
 /* DIRECTION CONTROLS (NEXT / PREV) */
 .bx-wrapper .bx-prev {
-  left: 48%;
-  background: url('../images/up-arrow.png');
+  left: 20px;
+  top: 47%;
+  display: inline-block;
+  background: url('../images/Rectangle.png');
+  height: 45px;
+  width: 45px;
+
 }
-.bx-wrapper .bx-next {
-    left:50%;
-    background: url('../images/down-arrow.png') ;
+.bx-wrapper .bx-prev:after {
+  content: '\f053';
+  font-family: FontAwesome;
+  left: -29px;
+  position: absolute;
+  top: 16px;
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+  font-weight: 700;
+  letter-spacing: -10px;
 }
 
-.bx-controls-direction a {
+.bx-wrapper .bx-next {
+  right: 20px;
+  top: 47%;
+  display: inline-block;
+  background: url('../images/Rectangle.png');
+  height: 45px;
+  width: 45px;
+}
+.bx-wrapper .bx-next:before {
+  content: '\f054';
+  font-family: FontAwesome;
+  left: -25px;
   position: absolute;
-  bottom: -40px;
-  /*margin-top: -16px;*/
+  top: 16px;
+  font-size: 14px;
+  color: rgb(101, 101, 101);
+  font-weight: 700;
+}
+.bx-controls-direction a {
+  position:absolute;
   outline: 0;
-  width: 24px;
-  height: 24px;
+  width: 45px;
+  height: 45px;
   text-indent:100%;
     overflow:hidden;
   z-index: 1;
 }
+
+
 .bx-wrapper .bx-controls-direction a.disabled {
-  display: none;
+  display: block;
+  position: relative;
 }
 /* AUTO CONTROLS (START / STOP) */
 .bx-wrapper .bx-controls-auto {

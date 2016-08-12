@@ -1,7 +1,7 @@
 //@import _responsive.
 
-
 //I replaced a similar font "Myriad Pro" to 'PT Sans'
+//if PT-sans noy in use -kill font
 
 @font-face {
   font-family: Raleway;
@@ -25,12 +25,12 @@
   font-weight: 500;
   font-style: normal;
 }
-@font-face{
+/*@font-face{
   font-family:'PT_Sans';
   src: url('../fonts/PT_Sans-Web-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-}
+}*/
 /*---------------VARIABLES---------------*/
 $main_color_light:rgb(122, 122, 122);
 $main_color_dark:rgb(96, 96, 96);
@@ -39,13 +39,11 @@ $main_transition:background-color 200ms ease-out 0.1s;
 
 /*----------------MIXINS--------------*/
 @mixin main_transition{
--webkit-transition: background-color 200ms ease-out 0.1s;
--moz-transition: background-color 200ms ease-out 0.1s;
--o-transition: background-color 200ms ease-out 0.1s;
-transition: background-color 200ms ease-out 0.1s;
+  -webkit-transition: background-color 200ms ease-out 0.1s;
+  -moz-transition: background-color 200ms ease-out 0.1s;
+  -o-transition: background-color 200ms ease-out 0.1s;
+  transition: background-color 200ms ease-out 0.1s;
 }
-
-/*---------------VARIABLES END---------------*/
 
 /*---------------COMMON CLASSES---------------*/
 .next-line-usual{
@@ -93,9 +91,7 @@ transition: background-color 200ms ease-out 0.1s;
 }
 /*---------------HEADER END---------------*/
 
-
 /*---------------MAIN----------------------------*/
-
 
 /*---------------SECOND-BLOCK---------------*/
 .second-block-wrapper{
@@ -153,7 +149,6 @@ transition: background-color 200ms ease-out 0.1s;
     .third-block-text-link{
       color: $main_color_active;
     }
-
 }
 /*---------------THIRD-BLOCK-SLIDER END-------------*/
 
@@ -206,10 +201,10 @@ transition: background-color 200ms ease-out 0.1s;
   text-align: center;
 }
 .wrapper-block-inside-4blocks{
-  padding:50px 20px;
+  padding:50px 15px;
 }
 .fourth-block-img{
-    padding-bottom: 30px;
+    padding-bottom: 33px;
 }
 .fourth-block-header{
   color: $main_color_dark;
@@ -221,7 +216,7 @@ transition: background-color 200ms ease-out 0.1s;
 }
 .fourth-block-text{
   color: rgb(122, 122, 122);
-  font-family: 'PT_Sans',sans-serif;
+  font-family: Raleway,sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 25px;
@@ -231,13 +226,10 @@ transition: background-color 200ms ease-out 0.1s;
 /*---------------FIFTH-BLOCK -------------*/
 .fifth-block{
   background: url("../images/fifth-block-bg.png")no-repeat center;
-  //height:407px;
   padding-bottom: 72px;
 }
 ._fifth-block-add-header-style{
   color: rgb(208, 208, 208);
-  font-family: 'PT_Sans',sans-serif;
-  font-weight:400;
     &:before,
     &:after{
       background-color: rgb(119, 119, 119);
@@ -245,7 +237,7 @@ transition: background-color 200ms ease-out 0.1s;
 }
 .fifth-block-header-text{
   color: rgb(208, 208, 208);
-  font-family: 'PT_Sans',sans-serif;
+  font-family: Raleway,sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 25px;
@@ -355,8 +347,106 @@ transition: background-color 200ms ease-out 0.1s;
 
 /*---------------SEVENTH-BLOCK -------------*/
 .seventh-block{
-  height:500px;
-  background: url("../images/seventh-block-slider-bg.png") no-repeat  center;
+  padding-bottom: 67px;
+  background: url("../images/seventh-block-slider-bg.png") no-repeat top center;
+  text-align: center;
 }
-
+.seventh-block-slider-header{
+  @extend .header-block;
+  @extend ._fifth-block-add-header-style;
+  margin-bottom: 30px;
+}
+.seventh-block-slider-text{
+  color: rgb(216, 216, 216);
+  font-family: Raleway,sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 35px;
+  padding: 0 8%;
+  margin-bottom: 15px;
+}
+.seventh-block-slider-author{
+  color: $main_color_active;
+  font-family: Raleway, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+.seventh-block-slider-squares .bx-controls-direction{
+  display: none;
+}
 /*---------------SEVENTH-BLOCK END-------------*/
+
+/*---------------EIGHTH-BLOCK------------*/
+.eighth-block{
+  padding-bottom: 72px;
+}
+.eighth-block-header{
+  @extend .header-block;
+  margin-bottom:40px;
+}
+.eighth-block-cols-wrapper{
+  width:100%
+}
+.eighth-block-cols-clmn{
+  @extend .three-col-column;
+}
+.eighth-block-img{
+  display: block;
+}
+.eighth-block-cols-mini-wrapper{
+  width:100%;
+  margin: 20px 0 8px;
+}
+.mini-wrapper-date{
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgb(177, 177, 177);
+  float: left;
+  color: $main_color_light;
+  font-family: Raleway,sans-serif;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  padding: 6px 2px;
+  margin-right: 15px;
+    .mini-wrapper-date_number{
+      font-size: 20px;
+      padding:0 12px;
+      margin-bottom:4px;
+      display: inline-block;
+    }
+    .mini-wrapper-date_month{
+      font-size: 12px;
+      padding:0 10px;
+    }
+}
+.mini-wrapper-header{
+  color: $main_color_dark;
+  font-family: Raleway,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.mini-wrapper-heading{
+  color: $main_color_active;
+  font-family: Raleway,sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.eighth-block-cols-clmn-text{
+  color: $main_color_light;
+  font-family: Raleway,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 25px;
+  width: 103%;
+}
+/*---------------EIGHTH-BLOCK END-------------*/
+
+/*---------------NINETH-BLOCK-------------*/
+
+
+/*---------------NINETH-BLOCK END-------------*/

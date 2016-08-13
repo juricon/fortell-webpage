@@ -8,11 +8,21 @@ $(document).ready(function(){
         controls:false,
         pause: 5000
     });
+
+    var button = $(".to-top");
+
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > 400 ){
+            button.show()
+        }else{
+            button.hide()
+        };
+    });
+
+    button.click(function(){
+        $('html , body').animate({scrollTop:0},2000)
+    });
 });
 
-/*
-$main_color_light:rgb(122, 122, 122);
-$main_color_dark:rgb(96, 96, 96);
-$main_color_active:rgb(26, 187, 156);
-$main_transition:background-color 200ms ease-out 0.1s;
-*/
+
+

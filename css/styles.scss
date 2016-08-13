@@ -35,20 +35,23 @@
 $main_color_light:rgb(122, 122, 122);
 $main_color_dark:rgb(96, 96, 96);
 $main_color_active:rgb(26, 187, 156);
-$main_transition:background-color 200ms ease-out 0.1s;
+//$main_transition:200ms ease-out 0.1s;
 
 /*----------------MIXINS--------------*/
 @mixin main_transition{
-  -webkit-transition: background-color 200ms ease-out 0.1s;
-  -moz-transition: background-color 200ms ease-out 0.1s;
-  -o-transition: background-color 200ms ease-out 0.1s;
-  transition: background-color 200ms ease-out 0.1s;
+  -webkit-transition:  200ms ease-out 0.1s;
+  -moz-transition:  200ms ease-out 0.1s;
+  -o-transition:  200ms ease-out 0.1s;
+  transition:  200ms ease-out 0.1s;
 }
 
 /*---------------COMMON CLASSES---------------*/
 .next-line-usual{
   display:block;
   clear:both;
+}
+a:visited{
+  text-decoration: none;
 }
 
 /*---------------HEADER---------------*/
@@ -74,6 +77,7 @@ $main_transition:background-color 200ms ease-out 0.1s;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
+  @include main_transition;
     &:hover{
       color:$main_color_active;
       text-decoration: none;
@@ -313,9 +317,9 @@ $main_transition:background-color 200ms ease-out 0.1s;
 }
 .three-col-link{
   opacity:1;
+  @include main_transition;
   &:hover{
     opacity:0.8;
-    @include main_transition;
   }
 }
 .col-header{
@@ -392,9 +396,6 @@ $main_transition:background-color 200ms ease-out 0.1s;
 .eighth-block-cols-clmn{
   @extend .three-col-column;
 }
-.eighth-block-img{
-  display: block;
-}
 .eighth-block-cols-mini-wrapper{
   width:100%;
   margin: 20px 0 8px;
@@ -446,7 +447,126 @@ $main_transition:background-color 200ms ease-out 0.1s;
 }
 /*---------------EIGHTH-BLOCK END-------------*/
 
-/*---------------NINETH-BLOCK-------------*/
+/*---------------NINETH-BLOCK-PREFOOTER-------------*/
+.nineth-block-prefooter{
+  padding-bottom: 14px;
+  background-color: rgb(55, 55, 55);
+}
+.nineth-block-prefooter-wrapper{
+  width:100%;
+  margin:70px 0  65px;
+}
+.prefooter-fourth-block{
+  /* in  psd lost  one word in first column. it's 'magna.'
+  you can see it when pick 'T tool' in Photoshop*/
+  width:25%;
+  float: left;
+}
+.prefooter-header{
+  color: rgb(240, 240, 240);
+  font-family: Raleway,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-bottom:28px;
+}
 
-
+.prefooter-text{
+  padding-bottom:35px;
+  color: rgb(202, 202, 202);
+  font-family: Raleway,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.prefooter-addres-text{
+  @extend .prefooter-text;
+  padding-bottom: 0;
+  display: block;
+  padding-left:25px;
+  background-repeat: no-repeat;
+  &:first-of-type{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAANCAMAAABM3rQ0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAjVBMVEXKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr////QL/H6AAAALXRSTlMAAjlVMCHMuhID0e6+9bFD9B01YtMB9kFA/VgLev4gzaz7KbCZJvoZj4HXDRN7CZFkAAAAAWJLR0QuVNMQhwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAGNJREFUCNctzNcWgkAUQ9EzIDr2UVCxUKzY8v+/JxfJQ9Z+SQAXxQMsyVDSyMN4oulsrgUsFVaspYRUGWy22pFrfzieVJS4Spa63eaG88Vurq1u3eH9odB04qnXH/j3pxdfqx8/+Ainlk8mLAAAAABJRU5ErkJggg==');
+    background-position:0 15%;
+  }
+  &:nth-of-type(2){
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAALCAMAAABxsOwqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEXKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr///9cD9/AAAAAL3RSTlMACAwdoe/2y0E27bd6d6j9ddf8FwXUv8PEDXJHFMyUAxU1+KQKyKMB4qACxfmEu21jI8QAAAABYktHRDCu3C3kAAAACXBIWXMAAAsSAAALEgHS3X78AAAAY0lEQVQI1y2KWRaCMAADI7IoULSisi/KIqiQ+9+OFpifyXsTQHEwsHI0LdJ2TsDZ9XwhRHC5Qt5C3e6PJ8jtpxzFSNIM2kBekGWlSy1l+Ho3arcde3wGjl/8yP/Uk5wRcSdeAHz9CWVtEg9RAAAAAElFTkSuQmCC');
+    background-position:0 50%;
+  }
+  &:last-of-type{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAICAMAAAD6Ou7DAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAllBMVEXKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr///8CzAQmAAAAMHRSTlMFjKsLrwlt/IkKscQSUPb7ZxHD1hU36vJI05klSyMvTC2Plxbbp+MciJUQy4EHvcjDrDTmAAAAAWJLR0Qx2dsdcgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAFhJREFUCNc1jMUWg0AUxR5StPggAxR3Kff/v45DC1klmxAJuBElkl+K+nNNNwjm27IBx/V8EBCwMIoTj+OKNMs/RVnVVzRth77HME6geVn/M8422r/P+tBPWzgM5Tc+NcoAAAAASUVORK5CYII=');
+    background-position:0 55%;
+  }
+}
+.prefooter-text_get{
+  width:89%;
+}
+.prefooter-text_twitter{
+  padding-right: 11%;
+}
+.prefooter-fourth-block-link,
+.prefooter-addres-link{
+  color: rgb(202, 202, 202);
+  @include main_transition;
+  &:hover{
+    color:$main_color_active;
+    text-decoration: none;
+  }
+}
+.prefooter-text_pop-posts {
+  padding-bottom:28px;
+  width: 88%;
+}
+.prefooter-pop-posts{
+  @extend .prefooter-addres-link;
+}
+.prefooter-text_about{
+  padding-bottom: 30px;
+  width:86%;
+}
+.eighth-block-cols-clmn-link{
+  @extend .three-col-link;
+}
 /*---------------NINETH-BLOCK END-------------*/
+
+/*---------------TENTH-BLOCK-FOOTER-------------*/
+.tenth-block{
+  background-color: rgb(51, 51, 51);
+}
+.footer-header{
+  color: rgb(202, 202, 202);
+  font-family: Raleway,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 91px;
+  text-align: left;
+}
+/*----------TO TOP----------*/
+/*Thanks a lot http://codepen.io/atflihoucine/pen/oxBweR*/
+.to-top{
+  position: fixed;
+  bottom: 15px;
+  right: 5px;
+  padding:5px;
+  cursor:pointer;
+  display: none;
+}
+.to-top:hover i{
+  color:$main_color_active;
+  top:0;
+  opacity: 1;
+}
+.to-top i{
+  font-size: 35px;
+  opacity: 0.5;
+  color: #6C7A89;
+  position: relative;
+  top: 3px;
+  left: 5px;
+  transition:all .3s ease 0s;
+  -moz-transition:all .3s ease 0s;
+  -webkit-transition:all .3s ease 0s;
+  -o-transition:all .3s ease 0s;
+}
+/*---------------TENTH-BLOCK END-------------*/

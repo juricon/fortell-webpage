@@ -123,13 +123,13 @@
     padding: 5px 10px;
     margin: 2px 5px;
     text-decoration: none;
-    color: #fff; }
+    color: rgb(122, 122, 122); }
     .slicknav_nav a:hover {
       -webkit-border-radius: 6px;
       -moz-border-radius: 6px;
       border-radius: 6px;
-      background: #fff;
-      color: rgb(218, 73, 28)}
+      /*background: #fff;*/
+      color: rgb(26, 187, 156)}
   .slicknav_nav .slicknav_txtnode {
     margin-left: 15px; }
   .slicknav_nav .slicknav_item a {

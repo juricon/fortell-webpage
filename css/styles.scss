@@ -138,6 +138,13 @@ a:visited{
   font-size: 20px;
   font-weight: 500;
   margin-bottom:3px;
+
+
+  a.third-block-text-link{
+    color: #1abb9c;
+    // & a:visited{
+    //   text-decoration: none;
+    }
 }
 .third-block-text{
   font-family: Raleway,sans-serif;
@@ -145,6 +152,10 @@ a:visited{
   font-weight: 500;
     .third-block-text-link{
       color: $main_color_active;
+      // & a:visited{
+      //   text-decoration: none;
+
+      // }
     }
 }
 /*---------------THIRD-BLOCK-SLIDER END-------------*/
@@ -555,8 +566,8 @@ a:visited{
   opacity: 0.5;
   color: #6C7A89;
   position: relative;
-  top: 3px;
-  left: 5px;
+  top: -20px;
+  left: -25px;
   transition:all .3s ease 0s;
   -moz-transition:all .3s ease 0s;
   -webkit-transition:all .3s ease 0s;

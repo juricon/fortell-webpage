@@ -325,7 +325,7 @@ if (typeof jQuery === 'undefined') {
     if (this.sliding)       return this.$element.one('slid.bs.carousel', function () { that.to(pos) }) // yes, "slid"
     if (activeIndex == pos) return this.pause().cycle()
 
-    return this.slide(pos > activeIndex ? 'next' : 'prev', this.$items.eq(pos))
+    return this.slide(pos > activeIndex ? ' ' : ' ', this.$items.eq(pos))
   }
 
   Carousel.prototype.pause = function (e) {
@@ -343,12 +343,12 @@ if (typeof jQuery === 'undefined') {
 
   Carousel.prototype.next = function () {
     if (this.sliding) return
-    return this.slide('next')
+    return this.slide(' ')
   }
 
   Carousel.prototype.prev = function () {
     if (this.sliding) return
-    return this.slide('prev')
+    return this.slide(' ')
   }
 
   Carousel.prototype.slide = function (type, next) {

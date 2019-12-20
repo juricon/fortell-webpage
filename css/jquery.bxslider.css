@@ -76,11 +76,15 @@ ul.bxslider {
   left: 20px;
   top: 47%;
   display: inline-block;
-  background: url('../images/Rectangle.png');
-  height: 45px;
-  width: 45px;
-
+  background: url('../images/Rectangle.png') no-repeat 0 -32px;
+  height: 32px;
+  width: 32px;
 }
+
+.bx-wrapper .bx-prev:hover {
+  background: url('../images/Rectangle.png') no-repeat 0 0px;
+}
+
 .bx-wrapper .bx-prev:after {
   content: '\f053';
   font-family: FontAwesome;
@@ -97,9 +101,13 @@ ul.bxslider {
   right: 20px;
   top: 47%;
   display: inline-block;
-  background: url('../images/Rectangle.png');
-  height: 45px;
-  width: 45px;
+  background: url('../images/Rectangle.png') no-repeat -43px -32px;;
+  height: 32px;
+  width: 32px;
+}
+
+.bx-wrapper .bx-next:hover{
+background: url('../images/Rectangle.png') no-repeat -43px 0px;
 }
 .bx-wrapper .bx-next:before {
   content: '\f054';
@@ -119,6 +127,11 @@ ul.bxslider {
   text-indent:100%;
     overflow:hidden;
   z-index: 1;
+  opacity: .9;
+}
+
+.bx-controls  a.bx-next{
+  text-indent: -200%;
 }
 
 
